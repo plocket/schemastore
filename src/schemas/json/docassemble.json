@@ -1,0 +1,78 @@
+{
+  "$id": "https://json.schemastore.org/docassemble.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "type": "object",
+  "properties": {
+    "comment": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "subquestion": {
+      "type": "string"
+    },
+    "table": {
+      "type": "string",
+      "$comment": "object?"
+    },
+    "question metadata": {
+      "type": "string",
+      "$comment": "object"
+    },
+    "yesno": {
+      "type": "string"
+    },
+    "noyes": {
+      "type": "string"
+    },
+    "choices": {
+      "type": "string",
+      "$comment": "array?"
+    },
+    "fields": {
+      "type": "string",
+      "$comment": "array?"
+    },
+    "continue button field": {
+      "type": "string"
+    }
+  },
+  "anyOf": [
+    { "$ref": "#/$defs/screen_parts_attributes" },
+    { "$ref": "#/$defs/css" }
+  ],
+  "$defs": {
+    "screen_parts_attributes": {
+      "type": "object",
+      "properties": {
+        "under": { "$ref": "#/$defs/under"},
+        "pre": { "$ref": "#/$defs/pre"},
+        "post": { "$ref": "#/$defs/post"},
+        "right": { "$ref": "#/$defs/right"}
+      }
+    },
+    "under": {
+      "type": "string"
+    },
+    "pre": {
+      "type": "string"
+    },
+    "post": {
+      "type": "string"
+    },
+    "right": {
+      "type": "string"
+    },
+    "css": {
+      "type": "string"
+    }
+  }
+}

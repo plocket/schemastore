@@ -862,6 +862,12 @@
       "url": "https://deta.space/assets/spacefile.schema.json"
     },
     {
+      "name": "",
+      "description": "",
+      "fileMatch": ["docassemble.yml", "docassemble.yaml"],
+      "url": "https://json.schemastore.org/docassemble.json"
+    },
+    {
       "name": "Drupal Breakpoints",
       "description": "Drupal configuration for breakpoints",
       "fileMatch": ["*.breakpoints.yml"],
