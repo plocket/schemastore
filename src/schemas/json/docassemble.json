@@ -4,46 +4,475 @@
   "additionalProperties": true,
   "type": "object",
   "properties": {
-    "comment": {
-      "type": "string"
-    },
-    "id": {
-      "type": "string"
-    },
-    "event": {
-      "type": "string"
-    },
-    "question": {
-      "type": "string"
-    },
-    "subquestion": {
-      "type": "string"
-    },
-    "table": {
-      "type": "string",
-      "$comment": "object?"
-    },
-    "question metadata": {
-      "type": "string",
-      "$comment": "object"
-    },
-    "yesno": {
-      "type": "string"
-    },
-    "noyes": {
-      "type": "string"
-    },
-    "choices": {
-      "type": "string",
-      "$comment": "array?"
-    },
-    "fields": {
-      "type": "string",
-      "$comment": "array?"
-    },
-    "continue button field": {
-      "type": "string"
-    }
+    "action": {
+        "type": "string"
+      },
+      "action buttons": {
+        "type": "string"
+      },
+      "all_variables": {
+        "type": "string"
+      },
+      "allow downloading": {
+        "type": "string"
+      },
+      "allow emailing": {
+        "type": "string"
+      },
+      "allow reordering": {
+        "type": "string"
+      },
+      "allowed to set": {
+        "type": "string"
+      },
+      "always include editable files": {
+        "type": "string"
+      },
+      "attachment": {
+        "type": "string"
+      },
+      "attachment code": {
+        "type": "string"
+      },
+      "attachment options": {
+        "type": "string"
+      },
+      "attachments": {
+        "type": "string"
+      },
+      "attachments code": {
+        "type": "string"
+      },
+      "audio": {
+        "type": "string"
+      },
+      "auto open": {
+        "type": "string"
+      },
+      "auto terms": {
+        "type": "string"
+      },
+      "back button": {
+        "type": "string"
+      },
+      "back button label": {
+        "type": "string"
+      },
+      "backgroundresponse": {
+        "type": "string"
+      },
+      "binaryresponse": {
+        "type": "string"
+      },
+      "breadcrumb": {
+        "type": "string"
+      },
+      "buttons": {
+        "type": "array"
+      },
+      "check in": {
+        "type": "string"
+      },
+      "choices": {
+        "type": "string",
+        "$comment": "array?"
+      },
+      "code": {
+        "type": "string"
+      },
+      "columns": {
+        "type": "string"
+      },
+      "combobox": {
+        "type": "string"
+      },
+      "command": {
+        "type": "string"
+      },
+      "comment": {
+        "type": "string"
+      },
+      "confirm": {
+        "type": "string"
+      },
+      "content": {
+        "type": "string"
+      },
+      "content file": {
+        "type": "string"
+      },
+      "content type": {
+        "type": "string"
+      },
+      "continue button color": {
+        "type": "string"
+      },
+      "continue button field": {
+        "type": "string"
+      },
+      "continue button label": {
+        "type": "string"
+      },
+      "corner back button label": {
+        "type": "string"
+      },
+      "css": {
+        "type": "string"
+      },
+      "css class": {
+        "type": "string"
+      },
+      "data": {
+        "type": "string"
+      },
+      "data from code": {
+        "type": "string"
+      },
+      "datatype": {
+        "type": "string"
+      },
+      "decoration": {
+        "type": "string"
+      },
+      "def": {
+        "type": "string"
+      },
+      "default": {
+        "type": "string"
+      },
+      "default language": {
+        "type": "string"
+      },
+      "default role": {
+        "type": "string"
+      },
+      "default screen parts": {
+        "type": "string"
+      },
+      "default validation messages": {
+        "type": "string"
+      },
+      "delete buttons": {
+        "type": "string"
+      },
+      "depends on": {
+        "type": "string"
+      },
+      "disable continue button": {
+        "type": "string"
+      },
+      "dropdown": {
+        "type": "string"
+      },
+      "edit": {
+        "type": "string"
+      },
+      "edit header": {
+        "type": "string"
+      },
+      "email address default": {
+        "type": "string"
+      },
+      "email body": {
+        "type": "string"
+      },
+      "email subject": {
+        "type": "string"
+      },
+      "email template": {
+        "type": "string"
+      },
+      "event": {
+        "type": "string"
+      },
+      "extras": {
+        "type": "string"
+      },
+      "features": {
+        "type": "string"
+      },
+      "field": {
+        "type": "string"
+      },
+      "fields": {
+        "type": "string",
+        "$comment": "array?"
+      },
+      "ga id": {
+        "type": "string"
+      },
+      "generic list object": {
+        "type": "string"
+      },
+      "generic object": {
+        "type": "string"
+      },
+      "help": {
+        "type": "string"
+      },
+      "hide continue button": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "if": {
+        "type": "string"
+      },
+      "image sets": {
+        "type": "string"
+      },
+      "images": {
+        "type": "string"
+      },
+      "imports": {
+        "type": "string"
+      },
+      "include": {
+        "type": "string"
+      },
+      "include attachment notice": {
+        "type": "string"
+      },
+      "include download tab": {
+        "type": "string"
+      },
+      "include_internal": {
+        "type": "string"
+      },
+      "indent": {
+        "type": "string"
+      },
+      "initial": {
+        "type": "string"
+      },
+      "interview help": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "list collect": {
+        "type": "string"
+      },
+      "machine learning storage": {
+        "type": "string"
+      },
+      "mako": {
+        "type": "string"
+      },
+      "mandatory": {
+        "type": "boolean"
+      },
+      "manual attachment list": {
+        "type": "string"
+      },
+      "metadata": {
+        "type": "string"
+      },
+      "modules": {
+        "type": "string"
+      },
+      "need": {
+        "type": "string"
+      },
+      "not available label": {
+        "type": "string"
+      },
+      "noyes": {
+        "type": "string"
+      },
+      "noyesmaybe": {
+        "type": "string"
+      },
+      "null response": {
+        "type": "string"
+      },
+      "objects": {
+        "type": "string"
+      },
+      "objects from file": {
+        "type": "string"
+      },
+      "on change": {
+        "type": "string"
+      },
+      "only sets": {
+        "type": "string"
+      },
+      "order": {
+        "type": "string"
+      },
+      "orelse": {
+        "type": "string"
+      },
+      "pen color": {
+        "type": "string"
+      },
+      "prevent going back": {
+        "type": "string"
+      },
+      "progress": {
+        "type": "string"
+      },
+      "progressive": {
+        "type": "string"
+      },
+      "question": {
+        "type": "string"
+      },
+      "question metadata": {
+        "type": "string",
+        "$comment": "object"
+      },
+      "read only": {
+        "type": "string"
+      },
+      "reconsider": {
+        "type": "string"
+      },
+      "redirect url": {
+        "type": "string"
+      },
+      "reload": {
+        "type": "string"
+      },
+      "require": {
+        "type": "string"
+      },
+      "require gathered": {
+        "type": "string"
+      },
+      "required": {
+        "type": "string"
+      },
+      "reset": {
+        "type": "string"
+      },
+      "response": {
+        "type": "string"
+      },
+      "response code": {
+        "type": "string"
+      },
+      "response filename": {
+        "type": "string"
+      },
+      "resume button color": {
+        "type": "string"
+      },
+      "resume button label": {
+        "type": "string"
+      },
+      "review": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string"
+      },
+      "rows": {
+        "type": "string"
+      },
+      "scan for variables": {
+        "type": "string"
+      },
+      "script": {
+        "type": "string"
+      },
+      "section": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "string"
+      },
+      "segment": {
+        "type": "string"
+      },
+      "segment id": {
+        "type": "string"
+      },
+      "sets": {
+        "type": "string"
+      },
+      "show if empty": {
+        "type": "string"
+      },
+      "show incomplete": {
+        "type": "string"
+      },
+      "shuffle": {
+        "type": "string"
+      },
+      "signature": {
+        "type": "string"
+      },
+      "skip undefined": {
+        "type": "string"
+      },
+      "sleep": {
+        "type": "string"
+      },
+      "subject": {
+        "type": "string"
+      },
+      "subquestion": {
+        "type": "string"
+      },
+      "supersedes": {
+        "type": "string"
+      },
+      "table": {
+        "type": "string",
+        "$comment": "object?"
+      },
+      "table css class": {
+        "type": "string"
+      },
+      "tabular": {
+        "type": "string"
+      },
+      "target": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      },
+      "terms": {
+        "type": "string"
+      },
+      "translations": {
+        "type": "string"
+      },
+      "undefine": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "use objects": {
+        "type": "string"
+      },
+      "usedefs": {
+        "type": "string"
+      },
+      "validation code": {
+        "type": "string"
+      },
+      "variable name": {
+        "type": "string"
+      },
+      "video": {
+        "type": "string"
+      },
+      "yesno": {
+        "type": "string"
+      },
+      "yesnomaybe": {
+        "type": "string"
+      },
+      "zip filename": {
+        "type": "string"
+      }
   },
   "anyOf": [
     { "$ref": "#/$defs/screen_parts_attributes" },
