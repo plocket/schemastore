@@ -196,8 +196,31 @@
       "type": "string"
     },
     "fields": {
-      "type": "string",
-      "$comment": "array?"
+      "additionalProperties": false,
+      "type": "array",
+      "items": [
+        {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "choices": { "type": "string" },
+                "datatype": { "type": "string" },
+                "input type": {
+                  "type": "string",
+                  "enum": [
+                    "text"
+                  ]
+                },
+                "show if": { "type": "string" },
+                "validation": { "type": "string" }
+              }
+            }
+          ]
+        }
+      ]
     },
     "ga id": {
       "type": "string"
@@ -495,9 +518,9 @@
     "field": {
       "allOf": [
         { "not": {"required": [
-          "action buttons", "buttons", "choices", "combobox",
-          "dropdown",
-          "fields", "list", "noyes", "noyesmaybe",
+          "choices", "combobox", "dropdown",
+          "fields",
+          "list", "noyes", "noyesmaybe",
           "signature", "yesno", "yesnomaybe"
         ]}},
         { "required": ["question"] }
@@ -507,39 +530,63 @@
       "$comment": "allows `continue button field`. What else does that?",
       "allOf": [
         { "not": {"required": [
-          "action buttons", "buttons", "choices", "combobox",
-          "continue button field",
-          "dropdown",
-          "field", "list collect", "noyes", "noyesmaybe",
+          "choices", "combobox",
+          "continue button field", "dropdown", "field",
+          "list collect", "noyes", "noyesmaybe",
           "signature", "yesno", "yesnomaybe"
         ]}},
         { "required": ["question"]}
       ]
     },
-    "ga id": [ "question" ],
-    "include": {
-      "properties": {
-        "comment": {},
-        "id": {},
-        "include": {}
-      },
-      "required": [ "include" ],
-      "additionalProperties": false
-    },
     "list collect": [ "question" ],
     "noyes": [ "question" ],
     "noyesmaybe": [ "question" ],
     "question": {
+      "additionalProperties": false,
+      "required": [ "question" ],
+      "$comment": "properties: depends on, on change, recalculate, needs?",
+      "properties": {
+        "comment": {},
+        "back button": {},
+        "back button label": {},
+        "choices": {},
+        "combobox": {},
+        "continue button color": {},
+        "continue button label": {},
+        "corner back button label": {},
+        "css": {},
+        "css class": {},
+        "disable continue button": {},
+        "dropdown": {},
+        "field": {},
+        "fields": {},
+        "id": {},
+        "list collect": {},
+        "noyes": {},
+        "noyesmaybe": {},
+        "question": {},
+        "signature": {},
+        "subquestion": {},
+        "attachment": {},
+        "attachments": {},
+        "mandatory": {},
+        "event": {},
+        "generic object": {},
+        "validation code": {},
+        "help": {},
+        "terms": {},
+        "sets": {},
+        "only sets": {},
+        "yesno": {},
+        "yesnomaybe": {}
+      },
       "oneOf": [
-        { "required": [ "action buttons" ] },
-        { "required": [ "buttons" ] },
         { "required": [ "choices" ] },
         { "required": [ "combobox" ] },
         { "required": [ "dropdown" ] },
         { "required": [ "field" ] },
         { "required": [ "fields" ] },
-        { "required": [ "field" ] },
-        { "required": [ "list" ] },
+        { "required": [ "list collect" ] },
         { "required": [ "noyes" ] },
         { "required": [ "noyesmaybe" ] },
         { "required": [ "signature" ] },
@@ -550,7 +597,18 @@
     "signature": [ "question" ],
     "subquestion": [ "question" ],
     "yesno": [ "question" ],
-    "yesnomaybe": [ "question" ]
+    "yesnomaybe": [ "question" ],
+
+    "ga id": [ "question" ],
+    "include": {
+      "properties": {
+        "comment": {},
+        "id": {},
+        "include": {}
+      },
+      "required": [ "include" ],
+      "additionalProperties": false
+    }
   },
   "$defs": {
     "screen_parts_keys": {
