@@ -517,12 +517,8 @@
     "dropdown": [ "question" ],
     "field": {
       "allOf": [
-        { "not": {"required": [ "choices" ] } },
-        { "not": {"required": [ "combobox" ] } },
         { "not": {"required": [ "continue button field" ] } },
-        { "not": {"required": [ "dropdown" ] } },
         { "not": {"required": [ "fields" ] } },
-        { "not": {"required": [ "list collect" ] } },
         { "not": {"required": [ "noyes" ] } },
         { "not": {"required": [ "noyesmaybe" ] } },
         { "not": {"required": [ "signature" ] } },
@@ -538,7 +534,6 @@
         { "not": {"required": [ "combobox" ] } },
         { "not": {"required": [ "dropdown" ] } },
         { "not": {"required": [ "field" ] } },
-        { "not": {"required": [ "list collect" ] } },
         { "not": {"required": [ "noyes" ] } },
         { "not": {"required": [ "noyesmaybe" ] } },
         { "not": {"required": [ "signature" ] } },
