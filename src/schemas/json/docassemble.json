@@ -462,7 +462,8 @@
       "type": "string"
     },
     "validation code": {
-      "type": "string"
+      "type": "string",
+      "$comment": "only in question block?"
     },
     "variable name": {
       "type": "string"
@@ -484,43 +485,50 @@
     { "$ref": "#/$defs/screen_parts_keys" },
     { "$ref": "#/$defs/html_bits" }
   ],
-  "allOf": [
-    {
-      "not": {
-        "properties": {
-          "yesno": {},
-          "field": {},
-          "buttons": {},
-          "noyes": {}
-        },
-        "required": ["yesno", "field", "buttons", "noyes"]
-      }
-    }
-  ],
   "dependencies": {
-    "question": {
-      "oneOf": [
-        { "required": [ "yesno" ] },
-        { "required": [ "field" ] }
-      ]
-    },
     "action buttons": [ "question" ],
     "buttons": [ "question" ],
     "choices": [ "question" ],
     "combobox": [ "question" ],
     "continue button field": [ "question" ],
     "dropdown": [ "question" ],
-    "field": [ "question" ],
-    "fields": [ "question" ],
+    "field": {
+      "allOf": [
+        { "not": {"required": ["action buttons"]}},
+        { "not": {"required": ["buttons"]}},
+        { "not": {"required": ["choices"]}},
+        { "not": {"required": ["combobox"]}},
+        { "not": {"required": ["dropdown"]}},
+        { "not": {"required": ["fields"]}},
+        { "not": {"required": ["list collect"]}},
+        { "not": {"required": ["noyes"]}},
+        { "not": {"required": ["noyesmaybe"]}},
+        { "not": {"required": ["signature"]}},
+        { "not": {"required": ["yesno"]}},
+        { "not": {"required": ["yesnomaybe"]}},
+        { "required": ["question"]}
+      ]
+    },
+    "fields": {
+      "$comment": "allows `continue button field`. What else does that?",
+      "allOf": [
+        { "not": {"required": ["action buttons"]}},
+        { "not": {"required": ["buttons"]}},
+        { "not": {"required": ["choices"]}},
+        { "not": {"required": ["combobox"]}},
+        { "not": {"required": ["continue button field"]}},
+        { "not": {"required": ["dropdown"]}},
+        { "not": {"required": ["field"]}},
+        { "not": {"required": ["list collect"]}},
+        { "not": {"required": ["noyes"]}},
+        { "not": {"required": ["noyesmaybe"]}},
+        { "not": {"required": ["signature"]}},
+        { "not": {"required": ["yesno"]}},
+        { "not": {"required": ["yesnomaybe"]}},
+        { "required": ["question"]}
+      ]
+    },
     "ga id": [ "question" ],
-    "list collect": [ "question" ],
-    "noyes": [ "question" ],
-    "noyesmaybe": [ "question" ],
-    "signature": [ "question" ],
-    "subquestion": [ "question" ],
-    "validation code": [ "question" ],
-    "yesno": [ "question" ],
-    "yesnomaybe": [ "question" ],
     "include": {
       "properties": {
         "comment": {},
@@ -529,7 +537,32 @@
       },
       "required": [ "include" ],
       "additionalProperties": false
-    }
+    },
+    "list collect": [ "question" ],
+    "noyes": [ "question" ],
+    "noyesmaybe": [ "question" ],
+    "question": {
+      "oneOf": [
+        { "required": [ "action buttons" ] },
+        { "required": [ "buttons" ] },
+        { "required": [ "choices" ] },
+        { "required": [ "combobox" ] },
+        { "required": [ "dropdown" ] },
+        { "required": [ "field" ] },
+        { "required": [ "fields" ] },
+        { "required": [ "field" ] },
+        { "required": [ "list" ] },
+        { "required": [ "noyes" ] },
+        { "required": [ "noyesmaybe" ] },
+        { "required": [ "signature" ] },
+        { "required": [ "yesno" ] },
+        { "required": [ "yesnomaybe" ] }
+      ]
+    },
+    "signature": [ "question" ],
+    "subquestion": [ "question" ],
+    "yesno": [ "question" ],
+    "yesnomaybe": [ "question" ]
   },
   "$defs": {
     "screen_parts_keys": {
