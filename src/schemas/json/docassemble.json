@@ -517,24 +517,33 @@
     "dropdown": [ "question" ],
     "field": {
       "allOf": [
-        { "not": {"required": [
-          "choices", "combobox", "dropdown",
-          "fields",
-          "list", "noyes", "noyesmaybe",
-          "signature", "yesno", "yesnomaybe"
-        ]}},
-        { "required": ["question"] }
+        { "not": {"required": [ "choices" ] } },
+        { "not": {"required": [ "combobox" ] } },
+        { "not": {"required": [ "continue button field" ] } },
+        { "not": {"required": [ "dropdown" ] } },
+        { "not": {"required": [ "fields" ] } },
+        { "not": {"required": [ "list collect" ] } },
+        { "not": {"required": [ "noyes" ] } },
+        { "not": {"required": [ "noyesmaybe" ] } },
+        { "not": {"required": [ "signature" ] } },
+        { "not": {"required": [ "yesno" ] } },
+        { "not": {"required": [ "yesnomaybe" ] } },
+        { "required": ["question"]}
       ]
     },
     "fields": {
       "$comment": "allows `continue button field`. What else does that?",
       "allOf": [
-        { "not": {"required": [
-          "choices", "combobox",
-          "continue button field", "dropdown", "field",
-          "list collect", "noyes", "noyesmaybe",
-          "signature", "yesno", "yesnomaybe"
-        ]}},
+        { "not": {"required": [ "choices" ] } },
+        { "not": {"required": [ "combobox" ] } },
+        { "not": {"required": [ "dropdown" ] } },
+        { "not": {"required": [ "field" ] } },
+        { "not": {"required": [ "list collect" ] } },
+        { "not": {"required": [ "noyes" ] } },
+        { "not": {"required": [ "noyesmaybe" ] } },
+        { "not": {"required": [ "signature" ] } },
+        { "not": {"required": [ "yesno" ] } },
+        { "not": {"required": [ "yesnomaybe" ] } },
         { "required": ["question"]}
       ]
     },
@@ -544,7 +553,7 @@
     "question": {
       "additionalProperties": false,
       "required": [ "question" ],
-      "$comment": "properties: depends on, on change, recalculate, needs?",
+      "$comment": "properties: depends on, on change, recalculate, needs? `anyOf` will make sure at least one appears while rules on individual properties will ensure no conflicts.",
       "properties": {
         "comment": {},
         "back button": {},
@@ -552,6 +561,7 @@
         "choices": {},
         "combobox": {},
         "continue button color": {},
+        "continue button field": {},
         "continue button label": {},
         "corner back button label": {},
         "css": {},
@@ -580,9 +590,10 @@
         "yesno": {},
         "yesnomaybe": {}
       },
-      "oneOf": [
+      "anyOf": [
         { "required": [ "choices" ] },
         { "required": [ "combobox" ] },
+        { "required": [ "continue button field" ] },
         { "required": [ "dropdown" ] },
         { "required": [ "field" ] },
         { "required": [ "fields" ] },
