@@ -1,0 +1,8 @@
+comment: Action buttons array wrong `show if` key type
+question: Action buttons fail
+action buttons:
+  - label: Label for action buttons
+    action: action_for_action_buttons
+    show if:
+      - wrong show if type
+mandatory: true

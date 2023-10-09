@@ -1,0 +1,6 @@
+question: Action buttons fail
+action buttons:
+  - label: Label for action buttons
+    action: action_for_action_buttons
+    arbitrary_key: value doesn't matter
+mandatory: true

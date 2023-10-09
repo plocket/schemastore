@@ -1,4 +1,5 @@
 {
+  "$comment": "action buttons",
   "$id": "https://json.schemastore.org/docassemble.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
@@ -6,13 +7,71 @@
   "properties": {
     "action": {
       "type": "string",
-      "$comment": "only in question block?"
+      "$comment": "only in question block? where in docs is top level item?"
     },
     "action buttons": {
-      "type": "string"
+      "$comment": "https://docassemble.org/docs/questions.html#action%20buttons. they don't always set a field",
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["code"],
+          "properties": {
+            "code": { "type": "string", "$comment": "py:[{}]" }
+          }
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["action", "label"],
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "$comment": "yml_var"
+                },
+                "arguments": {
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "forget prior": {
+                  "type": "boolean"
+                },
+                "icon": {
+                  "type": "string",
+                  "$comment": "can't be `enum` as user might have font awesome pro or other stuff"
+                },
+                "label": {
+                  "type": "string",
+                  "$comment": "yml_var"
+                },
+                "new window": {
+                  "type": "boolean",
+                  "$comment": "todo: on action or link in action?"
+                },
+                "placement": {
+                  "type": "string",
+                  "enum": ["before"]
+                },
+                "color": true,
+                "css class": true,
+                "show if": true
+              },
+              "allOf": [
+                {"$ref": "#/$defs/color"},
+                {"$ref": "#/$defs/css_class"},
+                {"$ref": "#/$defs/show_if_python_only"}
+              ]
+            }
+          ]
+        }
+      ]
     },
     "all_variables": {
-      "type": "string"
+      "type": "string",
+      "$comment": "where in docs is top level item?"
     },
     "allow downloading": {
       "type": "string"
@@ -196,6 +255,7 @@
       "type": "string"
     },
     "fields": {
+      "$comment": "notes: a field that's a string can't have other items. Also, `label` prop will overwrite an arbitrary `My lable: my_var` configuration.",
       "additionalProperties": false,
       "type": "array",
       "items": [
@@ -509,15 +569,32 @@
     { "$ref": "#/$defs/html_bits" }
   ],
   "dependencies": {
-    "action buttons": [ "question" ],
+    "action buttons": {
+      "required": ["question"],
+      "anyOf": [
+        { "required": [ "buttons_sometimes" ] },
+        { "required": [ "checkin_maybe" ] },
+        { "required": [ "continue button field" ] },
+        { "required": [ "event" ] },
+        { "required": [ "field" ] },
+        { "required": [ "fields" ] },
+        { "required": [ "mandatory" ] },
+        { "required": [ "noyes" ] },
+        { "required": [ "noyesmaybe" ] },
+        { "required": [ "only sets" ] },
+        { "required": [ "sets" ] },
+        { "required": [ "signature" ] },
+        { "required": [ "yesno" ] },
+        { "required": [ "yesnomaybe" ] }
+      ]
+    },
     "buttons": [ "question" ],
-    "choices": [ "question" ],
-    "combobox": [ "question" ],
+    "choices": [ "question", "field" ],
+    "combobox": [ "question", "field" ],
     "continue button field": [ "question" ],
-    "dropdown": [ "question" ],
+    "dropdown": [ "question", "field" ],
     "field": {
       "allOf": [
-        { "not": {"required": [ "continue button field" ] } },
         { "not": {"required": [ "fields" ] } },
         { "not": {"required": [ "noyes" ] } },
         { "not": {"required": [ "noyesmaybe" ] } },
@@ -530,9 +607,16 @@
     "fields": {
       "$comment": "allows `continue button field`. What else does that?",
       "allOf": [
+
+
+
         { "not": {"required": [ "choices" ] } },
         { "not": {"required": [ "combobox" ] } },
         { "not": {"required": [ "dropdown" ] } },
+
+
+
+
         { "not": {"required": [ "field" ] } },
         { "not": {"required": [ "noyes" ] } },
         { "not": {"required": [ "noyesmaybe" ] } },
@@ -550,11 +634,14 @@
       "required": [ "question" ],
       "$comment": "properties: depends on, on change, recalculate, needs? `anyOf` will make sure at least one appears while rules on individual properties will ensure no conflicts.",
       "properties": {
-        "comment": {},
+        "action buttons": {},
         "back button": {},
         "back button label": {},
+        "buttons": {},
+        "checkin": {},
         "choices": {},
         "combobox": {},
+        "comment": {},
         "continue button color": {},
         "continue button field": {},
         "continue button label": {},
@@ -563,6 +650,7 @@
         "css class": {},
         "disable continue button": {},
         "dropdown": {},
+        "event": {},
         "field": {},
         "fields": {},
         "id": {},
@@ -575,7 +663,6 @@
         "attachment": {},
         "attachments": {},
         "mandatory": {},
-        "event": {},
         "generic object": {},
         "validation code": {},
         "help": {},
@@ -586,15 +673,18 @@
         "yesnomaybe": {}
       },
       "anyOf": [
-        { "required": [ "choices" ] },
-        { "required": [ "combobox" ] },
+        { "required": [ "action_buttons_sometimes" ] },
+        { "required": [ "buttons_sometimes" ] },
+        { "required": [ "checkin_maybe" ] },
         { "required": [ "continue button field" ] },
-        { "required": [ "dropdown" ] },
+        { "required": [ "event" ] },
         { "required": [ "field" ] },
         { "required": [ "fields" ] },
-        { "required": [ "list collect" ] },
+        { "required": [ "mandatory" ] },
         { "required": [ "noyes" ] },
         { "required": [ "noyesmaybe" ] },
+        { "required": [ "only sets" ] },
+        { "required": [ "sets" ] },
         { "required": [ "signature" ] },
         { "required": [ "yesno" ] },
         { "required": [ "yesnomaybe" ] }
@@ -634,11 +724,47 @@
         }
       }
     },
+    "color": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "type": "string",
+          "enum": [
+            "primary",
+            "secondary",
+            "success",
+            "danger",
+            "warning",
+            "info",
+            "light",
+            "link",
+            "dark"
+          ]
+        }
+      }
+    },
     "html_bits": {
       "type": "object",
       "properties": {
         "css": {
           "type": "string"
+        }
+      }
+    },
+    "css_class": {
+      "type": "object",
+      "properties": {
+        "css class": {
+          "type": "string"
+        }
+      }
+    },
+    "show_if_python_only": {
+      "type": "object",
+      "properties": {
+        "show if": {
+          "type": "string",
+          "$comment": "py"
         }
       }
     }

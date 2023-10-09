@@ -1,0 +1,9 @@
+comment: Action buttons array wrong `arguments` key type
+question: Action buttons fail
+action buttons:
+  - label: Label for action buttons
+    action: action_for_action_buttons
+    arguments:
+      - wrong_arg_type
+      - wrong_arg_type2
+mandatory: true

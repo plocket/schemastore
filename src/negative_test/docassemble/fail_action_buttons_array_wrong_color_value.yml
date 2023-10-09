@@ -1,0 +1,7 @@
+comment: Action buttons wrong `color` key value
+question: Action buttons fail
+action buttons:
+  - label: Label for action buttons
+    action: action_for_action_buttons
+    color: wrong color
+mandatory: true

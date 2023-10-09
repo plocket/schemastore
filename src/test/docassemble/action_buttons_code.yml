@@ -1,0 +1,15 @@
+question: Action buttons pass
+action buttons:
+  code: |
+    [{'action': 'eat',
+      'arguments': {'fruit': 'apple'},
+      'label': 'Eat ' + 'apple',
+      'color': 'secondary',
+      'css class': 'eat-button',
+      'forget prior': False,
+      'icon': 'pen',
+      'new window': True,
+      'placement': 'before',
+      'show if': True
+    }]
+field: var_for_field

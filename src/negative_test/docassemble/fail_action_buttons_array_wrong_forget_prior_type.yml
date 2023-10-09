@@ -1,0 +1,7 @@
+comment: Action buttons array wrong `forget prior` key type
+question: Action buttons fail
+action buttons:
+  - label: Label for action buttons
+    action: action_for_action_buttons
+    forget prior: wrong forget prior type
+mandatory: true

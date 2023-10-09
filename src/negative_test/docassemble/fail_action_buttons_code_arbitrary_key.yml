@@ -1,0 +1,8 @@
+question: Action buttons pass
+action buttons:
+  arbitrary_key: value doesn't matter
+  code: |
+    [{'action': 'eat',
+      'label': 'Eat ' + 'apple',
+    }]
+mandatory: true

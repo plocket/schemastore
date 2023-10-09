@@ -1,0 +1,19 @@
+question: Action buttons
+action buttons:
+  - label: |
+      Label for action buttons
+    action: action_for_action_buttons
+    arguments:
+      arg1: argument1_for_action_buttons
+      arg2: argument2_for_action_buttons
+    color: primary
+    css class: a-class
+    forget prior: false
+    icon: chevron
+    new window: true
+    placement: before
+    show if: |
+      some_var != some_other_var
+  - label: 2nd Label for action buttons
+    action: action2_for_action_buttons
+continue button field: var_for_continue_button_field

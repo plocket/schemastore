@@ -1,0 +1,8 @@
+comment: Action buttons array wrong `css class` key type
+question: Action buttons fail
+action buttons:
+  - label: Label for action buttons
+    action: action_for_action_buttons
+    css class:
+      - wrong class type
+mandatory: true

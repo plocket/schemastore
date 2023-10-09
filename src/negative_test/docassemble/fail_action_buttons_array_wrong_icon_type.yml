@@ -1,0 +1,8 @@
+comment: Action buttons array wrong `icon` key type
+question: Action buttons fail
+action buttons:
+  - label: Label for action buttons
+    action: action_for_action_buttons
+    icon:
+      - Wrong icon type
+mandatory: true
