@@ -1,6 +1,0 @@
-comment: |
-  Replace this file with an example/test that passes schema validation. Supported formats are JSON, YAML, and TOML. We recommend adding as many files as possible to make your schema most robust.
-question: A question
-fields:
-  - Field label: question_va_name
-    input type: text

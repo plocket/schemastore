@@ -74,7 +74,8 @@
       "$comment": "where in docs is top level item?"
     },
     "allow downloading": {
-      "type": "string"
+      "type": ["boolean", "string"],
+      "$comment": "python when string"
     },
     "allow emailing": {
       "type": "string"
@@ -588,6 +589,9 @@
         { "required": [ "yesnomaybe" ] }
       ]
     },
+    "allow downloading": {
+      "required": ["question", "attachments"]
+    },
     "buttons": [ "question" ],
     "choices": [ "question", "field" ],
     "combobox": [ "question", "field" ],
@@ -632,9 +636,10 @@
     "question": {
       "additionalProperties": false,
       "required": [ "question" ],
-      "$comment": "properties: depends on, on change, recalculate, needs? `anyOf` will make sure at least one appears while rules on individual properties will ensure no conflicts.",
+      "$comment": "properties: depends on, on change, recalculate, needs? `anyOf` will make sure at least one appears while rules on individual properties will ensure no conflicts. I'm not sure how to use the `anyOf`",
       "properties": {
         "action buttons": {},
+        "allow downloading": {},
         "back button": {},
         "back button label": {},
         "buttons": {},

@@ -1,0 +1,5 @@
+comment: "`allow downloading` with a boolean"
+allow downloading: True
+mandatory: True
+question: A question
+attachments: "todo: spec this later"

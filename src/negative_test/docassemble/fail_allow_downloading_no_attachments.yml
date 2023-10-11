@@ -1,0 +1,4 @@
+comment: "Fail `allow downloading` that's missing `attachments`"
+allow downloading: True
+mandatory: True
+question: A question
