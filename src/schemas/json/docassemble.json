@@ -11,7 +11,7 @@
     },
     "action buttons": {
       "$comment": "https://docassemble.org/docs/questions.html#action%20buttons. they don't always set a field",
-      "anyOf": [
+      "oneOf": [
         {
           "type": "object",
           "additionalProperties": false,
