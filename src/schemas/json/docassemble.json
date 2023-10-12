@@ -10,7 +10,7 @@
       "$comment": "only in question block? where in docs is top level item?"
     },
     "action buttons": {
-      "$comment": "https://docassemble.org/docs/questions.html#action%20buttons. they don't always set a field",
+      "$comment": "done. https://docassemble.org/docs/questions.html#action%20buttons. they don't always set a field",
       "oneOf": [
         {
           "type": "object",
@@ -74,11 +74,12 @@
       "$comment": "where in docs is top level item?"
     },
     "allow downloading": {
-      "type": ["boolean", "string"],
-      "$comment": "python when string"
+      "$comment": "python. done.",
+      "type": ["boolean", "string"]
     },
     "allow emailing": {
-      "type": "string"
+      "$comment": "python. Changlelog 0.2.42 - 2018-03-25 accepts python.",
+      "type": ["boolean", "string"]
     },
     "allow reordering": {
       "type": "string"
@@ -590,7 +591,10 @@
       ]
     },
     "allow downloading": {
-      "required": ["question", "attachments"]
+      "oneOf": [
+        {"required": ["question", "attachment"]},
+        {"required": ["question", "attachments"]}
+      ]
     },
     "buttons": [ "question" ],
     "choices": [ "question", "field" ],

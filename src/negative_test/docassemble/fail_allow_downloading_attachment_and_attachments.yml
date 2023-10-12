@@ -1,0 +1,6 @@
+comment: "`allow downloading` with both `attachment` and `attachments` siblings"
+allow downloading: True
+mandatory: True
+question: A question
+attachments: multiple attachments
+attachment: a single attachment too

@@ -1,0 +1,5 @@
+comment: "`allow downloading` with `attatchment` instead of `attachments`"
+allow downloading: True
+mandatory: True
+question: A question
+attachment: "todo: spec this later"
