@@ -1,0 +1,5 @@
+comment: "`allow emailing` with `attatchment` instead of `attachments`"
+allow emailing: True
+mandatory: True
+question: A question
+attachment: "todo: spec this later"

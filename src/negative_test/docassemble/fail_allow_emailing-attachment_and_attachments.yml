@@ -1,0 +1,6 @@
+comment: "`allow emailing` with both `attachment` and `attachments` siblings"
+allow emailing: True
+mandatory: True
+question: A question
+attachments: multiple attachments
+attachment: a single attachment too

@@ -1,0 +1,6 @@
+comment: "Fail `allow emailing` with the wrong type"
+allow emailing:
+  - True
+mandatory: True
+question: A question
+attachments: "todo: spec this later"

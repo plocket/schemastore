@@ -1,0 +1,5 @@
+comment: "`allow emailing` with a python string"
+allow emailing: let_zip and wants_zip
+mandatory: True
+question: A question
+attachments: "todo: spec this later"

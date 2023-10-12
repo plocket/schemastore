@@ -1,0 +1,4 @@
+comment: "Fail `allow emailing` that's missing `attachments`"
+allow emailing: True
+mandatory: True
+question: A question

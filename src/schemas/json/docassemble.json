@@ -596,6 +596,12 @@
         {"required": ["question", "attachments"]}
       ]
     },
+    "allow emailing": {
+      "oneOf": [
+        {"required": ["question", "attachment"]},
+        {"required": ["question", "attachments"]}
+      ]
+    },
     "buttons": [ "question" ],
     "choices": [ "question", "field" ],
     "combobox": [ "question", "field" ],
@@ -644,6 +650,7 @@
       "properties": {
         "action buttons": {},
         "allow downloading": {},
+        "allow emailing": {},
         "back button": {},
         "back button label": {},
         "buttons": {},
