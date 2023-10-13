@@ -1,0 +1,4 @@
+table: fruit_table
+rows: fruit
+columns: "todo: spec later"
+allow reordering: True

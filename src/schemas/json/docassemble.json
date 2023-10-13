@@ -82,7 +82,8 @@
       "type": ["boolean", "string"]
     },
     "allow reordering": {
-      "type": "string"
+      "$comment": "0.4.12 - 2019-03-01. As of 10/12/2023, anything goes, but only `False` or absence prevents reordering, no python evaluated. I'm making the spec we want for this one, not the one we have.",
+      "type": "boolean"
     },
     "allowed to set": {
       "type": "string"
@@ -602,6 +603,7 @@
         {"required": ["question", "attachments"]}
       ]
     },
+    "allow reordering": ["table"],
     "buttons": [ "question" ],
     "choices": [ "question", "field" ],
     "combobox": [ "question", "field" ],
@@ -720,6 +722,18 @@
       },
       "required": [ "include" ],
       "additionalProperties": false
+    },
+    "table": {
+      "additionalProperties": false,
+      "required": ["table", "rows", "columns"],
+      "$comment": "",
+      "properties": {
+        "table": {},
+        "allow reordering": {},
+        "columns": {},
+        "edit": {},
+        "rows": {}
+      }
     }
   },
   "$defs": {
