@@ -1,0 +1,6 @@
+comment: "`allowed to set` with an array"
+allowed to set:
+  - var_name1
+  - var_name2
+mandatory: True
+question: A question

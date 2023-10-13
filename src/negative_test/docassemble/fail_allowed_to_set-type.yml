@@ -1,0 +1,4 @@
+comment: "Fail `allowed to set` with the wrong type"
+allowed to set: True
+mandatory: True
+question: A question

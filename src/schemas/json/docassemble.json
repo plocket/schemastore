@@ -82,11 +82,26 @@
       "type": ["boolean", "string"]
     },
     "allow reordering": {
-      "$comment": "0.4.12 - 2019-03-01. As of 10/12/2023, anything goes, but only `False` or absence prevents reordering, no python evaluated. I'm making the spec we want for this one, not the one we have.",
+      "$comment": "0.4.12 - 2019-03-01 https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L3670. As of 10/12/2023, anything goes, but only `False` or absence prevents reordering, no python evaluated. I'm making the spec we want for this one, not the one we have.",
       "type": "boolean"
-    },
-    "allowed to set": {
-      "type": "string"
+    },"allowed to set"
+    : {
+      "$comment": "https://docassemble.org/docs/modifiers.html#allowed%20to%20set, https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L2400-L2410.",
+      "oneOf": [
+        {
+          "description": "python[str]",
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": [
+            {
+              "description": "var name",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "always include editable files": {
       "type": "string"
@@ -125,6 +140,7 @@
       "type": "string"
     },
     "binaryresponse": {
+      "$comment": "can only find this as a function argument in docs",
       "type": "string"
     },
     "breadcrumb": {
@@ -604,6 +620,7 @@
       ]
     },
     "allow reordering": ["table"],
+    "allowed to set": ["question"],
     "buttons": [ "question" ],
     "choices": [ "question", "field" ],
     "combobox": [ "question", "field" ],
@@ -653,6 +670,7 @@
         "action buttons": {},
         "allow downloading": {},
         "allow emailing": {},
+        "allowed to set": {},
         "back button": {},
         "back button label": {},
         "buttons": {},

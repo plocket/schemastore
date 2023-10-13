@@ -1,0 +1,4 @@
+comment: "`allowed to set` with a python string"
+allowed to set: array1 + array2
+mandatory: True
+question: A question

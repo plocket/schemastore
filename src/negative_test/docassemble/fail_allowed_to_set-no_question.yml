@@ -1,0 +1,3 @@
+comment: "Fail `allowed to set` with no question sibling"
+allowed to set: array1 + array2
+mandatory: True
