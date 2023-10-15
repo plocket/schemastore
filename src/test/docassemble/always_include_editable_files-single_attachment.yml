@@ -1,0 +1,5 @@
+comment: "`always include editable files` with `attatchment` instead of `attachments`"
+always include editable files: True
+mandatory: True
+question: A question
+attachment: "todo: spec this later"

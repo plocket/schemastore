@@ -1,0 +1,4 @@
+comment: "Fail `always include editable files` that's missing `attachments`"
+always include editable files: True
+mandatory: True
+question: A question

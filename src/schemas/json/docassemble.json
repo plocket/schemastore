@@ -89,7 +89,15 @@
       "type": "string"
     },
     "always include editable files": {
-      "type": "string"
+      "$comment": "done",
+      "description": "https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5799-L5803",
+      "oneOf": [
+        {"type": "boolean"},
+        {
+          "description": "python",
+          "type": "string"
+        }
+      ]
     },
     "attachment": {
       "type": "string"
@@ -593,17 +601,25 @@
     },
     "allow downloading": {
       "oneOf": [
-        {"required": ["question", "attachment"]},
-        {"required": ["question", "attachments"]}
+        {"required": ["attachment"]},
+        {"required": ["attachments"]}
       ]
     },
     "allow emailing": {
       "oneOf": [
-        {"required": ["question", "attachment"]},
-        {"required": ["question", "attachments"]}
+        {"required": ["attachment"]},
+        {"required": ["attachments"]}
       ]
     },
     "allow reordering": ["table"],
+    "always include editable files": {
+      "oneOf": [
+        {"required": ["attachment"]},
+        {"required": ["attachments"]}
+      ]
+    },
+    "attachment": ["question"],
+    "attachments": ["question"],
     "buttons": [ "question" ],
     "choices": [ "question", "field" ],
     "combobox": [ "question", "field" ],
@@ -653,6 +669,7 @@
         "action buttons": {},
         "allow downloading": {},
         "allow emailing": {},
+        "always include editable files": {},
         "back button": {},
         "back button label": {},
         "buttons": {},

@@ -1,0 +1,5 @@
+comment: "`always include editable files` with a python string"
+always include editable files: 5 == 5
+mandatory: True
+question: A question
+attachments: "todo: spec this later"

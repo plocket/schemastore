@@ -1,0 +1,6 @@
+comment: "Fail `always include editable files` with the wrong type"
+always include editable files:
+  - True
+mandatory: True
+question: A question
+attachments: "todo: spec this later"
