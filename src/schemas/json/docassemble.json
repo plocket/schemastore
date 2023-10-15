@@ -100,7 +100,72 @@
       ]
     },
     "attachment": {
-      "type": "string"
+      "description": "same as `attacments`. requires: contents | docx template file | pdf temlate file. defaults: varname: docvar, ",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "content": {"type": "string"},
+            "content file": {
+              "description": "(name or list of) filename or path, or `code`. needs `raw`.",
+              "type": ["array", "object", "string"]
+            },
+            "description": {
+              "description": "can this validiate in jsonschema?",
+              "type": "string"
+            },
+            "docx template file": {
+              "description": "object uses `code:`. https://docassemble.org/docs/documents.html#docx%20template%20file",
+              "type": ["object", "string"]
+            },
+            "filename": {
+              "description": "var?",
+              "type": "string"
+            },
+            "hyperlink style": {
+              "description": "needs `docx template file`",
+              "type": "string"
+            },
+            "language": {
+              "description": "language code",
+              "type": "string"
+            },
+            "name": {"type": "string"},
+            "password": {
+              "type": ["array", "object", "string"]
+            },
+            "pdf/a": {
+              "description": "in `features` it's always a bool: https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L2150. In attachment, can only exist with `fields`: https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5315. String here can be `<pdfa expression>` (python, I think). https://docassemble.org/docs/documents.html#pdfa.",
+              "type": ["boolean", "string"]
+            },
+            "pdf template file": {
+              "type": "string"
+            },
+            "raw": {
+              "description": "needs `content file`",
+              "type": "boolean"
+            },
+            "redact": {
+              "description": "python",
+              "type": ["boolean", "string"]
+            },
+            "tagged pdf": {
+              "description": "requires docx. Same as `pdf/a`",
+              "type": ["boolean", "string"]
+            },
+            "template password": {"type": "string"},
+            "valid formats": {
+              "description": "todo: spec later. enum with conflicting values. https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5136-L5144, https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5261-L5269",
+              "type": ["array", "string"]
+            },
+            "variable name": {
+              "description": "var",
+              "type": "string"
+            }
+          }
+        }
+      ]
     },
     "attachment code": {
       "type": "string"

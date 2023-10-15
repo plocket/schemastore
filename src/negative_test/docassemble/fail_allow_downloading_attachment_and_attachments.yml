@@ -3,4 +3,5 @@ allow downloading: True
 mandatory: True
 question: A question
 attachments: multiple attachments
-attachment: a single attachment too
+attachment:
+  - content: Attachment content

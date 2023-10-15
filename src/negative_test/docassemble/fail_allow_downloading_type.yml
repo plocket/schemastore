@@ -3,4 +3,5 @@ allow downloading:
   - True
 mandatory: True
 question: A question
-attachments: "todo: spec this later"
+attachment:
+  - content: Attachment content

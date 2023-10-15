@@ -1,4 +1,5 @@
 comment: "Fail `always include editable files` that's missing `question`"
 always include editable files: True
 mandatory: True
-attachments: "todo: spec this later"
+attachment:
+  - content: Attachment content

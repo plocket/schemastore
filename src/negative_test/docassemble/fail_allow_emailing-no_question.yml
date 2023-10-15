@@ -1,4 +1,5 @@
 comment: "Fail `allow emailing` that's missing `question`"
 allow emailing: True
 mandatory: True
-attachments: "todo: spec this later"
+attachment:
+  - content: Attachment content
