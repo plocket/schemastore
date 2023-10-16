@@ -1,5 +1,0 @@
-comment: "Fail `allow downloading` that's missing `question`"
-allow downloading: True
-mandatory: True
-attachment:
-  - content: Attachment content

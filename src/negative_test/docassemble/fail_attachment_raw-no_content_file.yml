@@ -1,0 +1,4 @@
+comment: "Fail `attachment` with `raw` missing `content file`"
+attachment:
+  - name: Attachment name
+    raw: True

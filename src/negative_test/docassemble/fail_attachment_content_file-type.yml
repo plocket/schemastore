@@ -1,0 +1,5 @@
+comment: "Fail `attachment` with `content file` wrong type"
+attachment:
+  - name: Attachment name
+    content file: 5
+    raw: True

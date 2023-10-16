@@ -1,5 +1,0 @@
-comment: "Fail `allow emailing` that's missing `question`"
-allow emailing: True
-mandatory: True
-attachment:
-  - content: Attachment content

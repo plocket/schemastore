@@ -1,0 +1,3 @@
+comment: "Fail `attachment` missing `content`, `content file`, `docx template file`, and `pdf template file`"
+attachment:
+  - name: Attachment name

@@ -100,13 +100,25 @@
       ]
     },
     "attachment": {
-      "description": "same as `attacments`. requires: contents | docx template file | pdf temlate file. defaults: varname: docvar, ",
+      "description": "same as `attachments`. need var name or mandatory, etc?",
       "type": "array",
       "items": [
         {
           "type": "object",
+          "oneOf": [
+            {"required": ["content"]},
+            {"required": ["content file"]},
+            {"required": ["docx template file"]},
+            {"required": ["pdf temlate file"]}
+          ],
+          "dependencies": {
+            "raw": {"required": ["content file"]}
+          },
           "properties": {
-            "content": {"type": "string"},
+            "content": {
+              "description": "mako. also works with `template`.",
+              "type": "string"
+            },
             "content file": {
               "description": "(name or list of) filename or path, or `code`. needs `raw`.",
               "type": ["array", "object", "string"]
@@ -683,8 +695,8 @@
         {"required": ["attachments"]}
       ]
     },
-    "attachment": ["question"],
-    "attachments": ["question"],
+    "attachment": [],
+    "attachments": [],
     "buttons": [ "question" ],
     "choices": [ "question", "field" ],
     "combobox": [ "question", "field" ],
