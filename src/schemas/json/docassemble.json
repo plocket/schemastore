@@ -104,6 +104,7 @@
       "type": "array",
       "items": [
         {
+          "$comment": "Rule for raw is ours",
           "type": "object",
           "oneOf": [
             {"required": ["content"]},
@@ -120,8 +121,26 @@
               "type": "string"
             },
             "content file": {
-              "description": "(name or list of) filename or path, or `code`. needs `raw`.",
-              "type": ["array", "object", "string"]
+              "description": "file names in /templates or whole filepaths",
+              "type": ["array", "object", "string"],
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": { "type": "string", "description": "filepath" }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["code"],
+                  "properties": {
+                    "code": { "type": "string", "description": "py:[filepath]" }
+                  }
+                },
+                {
+                  "description": "filepath",
+                  "type": "string"
+                }
+              ]
             },
             "description": {
               "description": "can this validiate in jsonschema?",

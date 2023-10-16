@@ -1,0 +1,4 @@
+comment: "`attachment` with `raw` and `content file`"
+attachment:
+  - content file: foo.cpp
+    raw: True

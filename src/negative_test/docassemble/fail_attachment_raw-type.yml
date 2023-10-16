@@ -1,5 +1,4 @@
 comment: "Fail `attachment` with `raw` wrong type"
 attachment:
-  - name: Attachment name
-    content file: content_file.cpp
+  - content file: content_file.cpp
     raw: 5 == 5

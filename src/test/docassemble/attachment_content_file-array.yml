@@ -1,0 +1,5 @@
+comment: "`attachment` with `content file` as array type"
+attachment:
+  - content file:
+      - list_of.cpp
+      - template_filepaths.md

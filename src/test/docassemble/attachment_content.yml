@@ -1,0 +1,4 @@
+comment: "`attachment` with `content` as string type"
+attachment:
+  - content: |
+      Mako ${ content }.

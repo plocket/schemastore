@@ -1,0 +1,6 @@
+comment: "Fail `attachment` with `content` wrong type"
+attachment:
+  - content:
+      - wrong
+      - content
+      - type

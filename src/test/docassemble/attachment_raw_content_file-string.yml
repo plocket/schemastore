@@ -1,5 +1,0 @@
-comment: "`attachment` with `raw` and `content file` as string type"
-attachment:
-  - name: Attachment name
-    content file: foo.cpp
-    raw: True

@@ -1,0 +1,5 @@
+comment: "`attachment` with `content file` as object type, but with an arbitrary key"
+attachment:
+  - content file:
+      wrong key: |
+        not_code

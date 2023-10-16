@@ -1,0 +1,3 @@
+comment: "`attachment` with `content file` as string type"
+attachment:
+  - content file: docassemble.demo:data/templates/filepath.md
