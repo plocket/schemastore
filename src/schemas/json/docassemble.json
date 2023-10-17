@@ -30,7 +30,7 @@
               "properties": {
                 "action": {
                   "type": "string",
-                  "$comment": "yml_var"
+                  "$comment": "var"
                 },
                 "arguments": {
                   "type": "object",
@@ -45,7 +45,7 @@
                 },
                 "label": {
                   "type": "string",
-                  "$comment": "yml_var"
+                  "$comment": "var"
                 },
                 "new window": {
                   "type": "boolean",
@@ -893,7 +893,7 @@
           "type": ["array", "object", "string"]
         },
         "pdf/a": {
-          "description": "in `features` it's always a bool: https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L2150. In attachment, can only exist with `fields`: https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5315. String here can be `<pdfa expression>` (python, I think). https://docassemble.org/docs/documents.html#pdfa.",
+          "description": "in `features` it's always a bool: https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L2150. In attachment, can only exist with `fields` (with a PDF): https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5315. String here can be `<pdfa expression>` (python, I think). https://docassemble.org/docs/documents.html#pdfa.",
           "type": ["boolean", "string"],
           "default": false
         },
@@ -911,7 +911,7 @@
           "default": true
         },
         "tagged pdf": {
-          "description": "requires docx. Same as `pdf/a`",
+          "description": "requires docx.",
           "type": ["boolean", "string"],
           "default": false
         },

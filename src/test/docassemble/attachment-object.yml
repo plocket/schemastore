@@ -1,0 +1,16 @@
+comment: "`attachment` as an object"
+attachment:
+  content file: content.cpp
+  description: a description
+  filename: filename.pdf
+  hyperlink style: CustomStyle
+  language: en
+  name: A doc name
+  password: a!password
+  pdf/a: True
+  raw: True
+  redact: True
+  tagged pdf: True
+  template password: a-template^password
+  valid formats: pdf
+  variable name: a_var_name
