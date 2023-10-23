@@ -106,7 +106,11 @@
           "type": "array",
           "items": {"$ref": "#/$defs/attachment_object"}
         },
-        {"$ref": "#/$defs/attachment_object"}
+        {"$ref": "#/$defs/attachment_object"},
+        {
+          "type": "string",
+          "description": "filename"
+        }
       ]
     },
     "attachment code": {
@@ -823,7 +827,7 @@
       }
     },
     "attachment_object": {
-      "$comment": "Rule for raw is ours",
+      "$comment": "Rule for raw is ours. `process_attachment() is at https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L4951",
       "type": "object",
       "oneOf": [
         {"required": ["content"]},
@@ -872,7 +876,7 @@
           "type": ["object", "string"]
         },
         "filename": {
-          "description": "var?",
+          "description": "var? default empty string? https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L4976",
           "type": "string",
           "default": "Document"
         },
@@ -922,7 +926,19 @@
         "valid formats": {
           "description": "todo: spec later. enum with conflicting values. https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5136-L5144, https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5261-L5269",
           "type": ["array", "string"],
-          "default": ["*"]
+          "default": ["*"],
+          "oneOf": [
+            {
+              "description": "MIME",
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "description": "MIME"
+              }
+            }
+          ]
         },
         "variable name": {
           "description": "var",
