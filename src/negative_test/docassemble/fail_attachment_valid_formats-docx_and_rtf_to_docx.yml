@@ -1,0 +1,6 @@
+comment: "Fail `attachment` with `valid formats` includes both 'docx' and 'rtf to docs'"
+attachment:
+  - content: Mako ${ content }.
+    valid formats:
+      - docx
+      - rtf to docx

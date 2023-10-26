@@ -1,0 +1,4 @@
+comment: "`attachment` with `valid formats` contains string"
+attachment:
+  - valid formats: md
+    content: Some content

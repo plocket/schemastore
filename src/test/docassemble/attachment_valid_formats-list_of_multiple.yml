@@ -1,0 +1,8 @@
+comment: "`attachment` with `valid formats` contains list"
+attachment:
+  - valid formats:
+      - md
+      - docx
+      - pdf
+      - random format
+    content file: content_filename_string.cpp

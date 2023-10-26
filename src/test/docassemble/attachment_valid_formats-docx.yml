@@ -1,0 +1,5 @@
+comment: "`attachment` with `valid formats` contains 'docx' without 'rtf to docx'"
+attachment:
+  - valid formats:
+      - docx
+    content file: content_filename_string.cpp

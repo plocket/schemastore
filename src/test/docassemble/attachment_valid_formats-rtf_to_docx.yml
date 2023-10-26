@@ -1,0 +1,5 @@
+comment: "`attachment` with `valid formats` contains a random format"
+attachment:
+  - valid formats:
+      - rtf to docx
+    content: Some content

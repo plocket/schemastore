@@ -1,0 +1,4 @@
+comment: "Fail `attachment` with `valid formats` of wrong type"
+attachment:
+  - valid formats: 5
+    content: Mako ${ content }.
