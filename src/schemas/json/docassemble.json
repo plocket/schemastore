@@ -1,5 +1,5 @@
 {
-  "$comment": "action buttons",
+  "$comment": "special vars: https://docassemble.org/docs/special.html",
   "$id": "https://json.schemastore.org/docassemble.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
@@ -840,6 +840,11 @@
       },
       "additionalProperties": false,
       "properties": {
+        "additional yaml": { "type": "string" },
+        "allow privileges": { "type": "string" },
+        "allow users": { "type": "string" },
+        "checkbox export value": { "type": "string" },
+        "code": { "type": "string" },
         "content": {
           "description": "mako. also works with `template`.",
           "type": "string"
@@ -866,15 +871,21 @@
             }
           ]
         },
+        "decimal places": {"type": "string"},
         "description": {
           "description": "can this validiate in jsonschema?",
           "type": "string",
           "default": ""
         },
+        "docx reference file": {"type": "string"},
         "docx template file": {
           "description": "object uses `code:`. https://docassemble.org/docs/documents.html#docx%20template%20file",
           "type": ["object", "string"]
         },
+        "editable": {"type": "string"},
+        "field code": {"type": "string"},
+        "field variables": {"type": "string"},
+        "fields": {"type": "string"},
         "filename": {
           "description": "var? default empty string? https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L4976",
           "type": "string",
@@ -884,6 +895,8 @@
           "description": "needs `docx template file`. default null? (page vars)",
           "type": "string"
         },
+        "initial yaml": {"type": "string"},
+        "metadata": {"type": "string"},
         "language": {
           "description": "language code",
           "type": "string"
@@ -904,25 +917,34 @@
         "pdf template file": {
           "type": "string"
         },
+        "persistent": {"type": "string"},
+        "private": {"type": "string"},
         "raw": {
           "description": "needs `content file`",
           "type": "boolean",
           "default": false
         },
+        "raw field variables": {"type": "string"},
         "redact": {
           "description": "python",
           "type": ["boolean", "string"],
           "default": true
         },
+        "rendering font": {"type": "string"},
+        "rtf template file": {"type": "string"},
+        "skip undefined": {"type": "string"},
         "tagged pdf": {
           "description": "requires docx.",
           "type": ["boolean", "string"],
           "default": false
         },
+        "template file": {"type": "string"},
         "template password": {
           "description": "default null? (page vars)",
           "type": "string"
         },
+        "update references": {"type": "string"},
+        "usedefs": {"type": "string"},
         "valid formats": {
           "description": "todo: spec later. enum with conflicting values. https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5136-L5144, https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5261-L5269",
           "type": ["array", "string"],
