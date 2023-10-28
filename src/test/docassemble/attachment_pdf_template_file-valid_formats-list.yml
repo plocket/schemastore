@@ -1,0 +1,5 @@
+comment: "`pdf template file` can only have `valid formats` of pdf, here a list"
+attachment:
+  - valid formats:
+      - pdf
+    pdf template file: a_file.pdf

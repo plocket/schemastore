@@ -1,0 +1,6 @@
+comment: "`docx template file` can have `valid formats` with docx and pdf"
+attachment:
+  - valid formats:
+      - docx
+      - pdf
+    docx template file: a_file.docx

@@ -1,0 +1,7 @@
+comment: "Fail `attachment` with `content file` as an object that includes a key that's not `code`"
+attachment:
+  - content file:
+      code: |
+        python_code
+      not code: |
+        This key is wrong

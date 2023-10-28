@@ -117,6 +117,7 @@
       "type": "string"
     },
     "attachment options": {
+      "$comment": "https://docassemble.org/docs/documents.html#customization",
       "type": "string"
     },
     "attachments": {
@@ -833,24 +834,46 @@
         {"required": ["content"]},
         {"required": ["content file"]},
         {"required": ["docx template file"]},
-        {"required": ["pdf temlate file"]}
+        {"required": ["pdf template file"]}
       ],
       "dependencies": {
-        "raw": {"required": ["content file"]}
+        "raw": {"required": ["content file"]},
+        "pdf template file": {
+          "properties": {
+            "valid formats": {
+              "enum": ["pdf", ["pdf"]]
+            }
+          }
+        },
+        "docx template file": {
+          "properties": {
+            "valid formats": {
+              "enum": ["pdf", "docx", ["pdf"], ["docx"], ["pdf", "docx"]]
+            }
+          }
+        }
       },
       "additionalProperties": false,
       "properties": {
-        "additional yaml": { "type": "string" },
-        "allow privileges": { "type": "string" },
-        "allow users": { "type": "string" },
+        "allow privileges": {
+          "$comment": "https://docassemble.org/docs/documents.html#permissions",
+          "type": "string"
+        },
+        "allow users": {
+          "$comment": "https://docassemble.org/docs/documents.html#permissions",
+          "type": "string"
+        },
         "checkbox export value": { "type": "string" },
-        "code": { "type": "string" },
+        "code": {
+          "$comment": "https://docassemble.org/docs/documents.html#template%20code",
+          "type": "string"
+        },
         "content": {
-          "description": "mako. also works with `template`.",
+          "description": "mako. also works with `template`, though a bit differently?",
           "type": "string"
         },
         "content file": {
-          "description": "file names in /templates or whole filepaths. also works with `template`? what is `content file code`? https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5082-L5101",
+          "description": "file names in /templates or whole filepaths, and, if `code`, a URL, DAFile, DAFileList, DAFileCollection, or DAStaticFile. also works with `template`? what is `content file code`? https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5082-L5101",
           "type": ["array", "object", "string"],
           "oneOf": [
             {
@@ -871,42 +894,61 @@
             }
           ]
         },
-        "decimal places": {"type": "string"},
+        "decimal places": {
+          "$comment": "https://docassemble.org/docs/documents.html#template%20code",
+          "type": "integer"
+        },
         "description": {
-          "description": "can this validiate in jsonschema?",
+          "description": "mako | markdown",
           "type": "string",
           "default": ""
         },
-        "docx reference file": {"type": "string"},
         "docx template file": {
-          "description": "object uses `code:`. https://docassemble.org/docs/documents.html#docx%20template%20file",
-          "type": ["object", "string"]
+          "$comment": "`valid format` == pdf | docx, object uses `code:`. https://docassemble.org/docs/documents.html#docx%20template%20file, https://docassemble.org/docs/documents.html#template%20file%20code",
+          "type": ["array", "object", "string"]
         },
-        "editable": {"type": "string"},
-        "field code": {"type": "string"},
-        "field variables": {"type": "string"},
-        "fields": {"type": "string"},
+        "editable": {
+          "$comment": "https://docassemble.org/docs/documents.html#editable",
+          "type": "string"
+        },
+        "field code": {
+          "$comment": "https://docassemble.org/docs/documents.html#particfields, https://docassemble.org/docs/documents.html#template%20code",
+          "type": ["boolean", "string"]
+        },
+        "field variables": {
+          "$comment": "https://docassemble.org/docs/documents.html#template%20code",
+          "type": "string"
+        },
+        "fields": {
+          "$comment": "mako, not markdown sort of. https://docassemble.org/docs/documents.html#particfields. https://docassemble.org/docs/documents.html#update%20references",
+          "type": "string"
+        },
         "filename": {
-          "description": "var? default empty string? https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L4976",
+          "$comment": "default empty string? https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L4976",
+          "description": "mako",
           "type": "string",
           "default": "Document"
         },
         "hyperlink style": {
-          "description": "needs `docx template file`. default null? (page vars)",
+          "$comment": "needs `docx template file`. default null? (source: page vars) https://docassemble.org/docs/documents.html#hyperlink%20style",
           "type": "string"
         },
-        "initial yaml": {"type": "string"},
-        "metadata": {"type": "string"},
+        "metadata": {
+          "$comment": "https://docassemble.org/docs/documents.html#pandoc",
+          "type": "string"
+        },
         "language": {
+          "$comment": "https://docassemble.org/docs/documents.html#language",
           "description": "language code",
           "type": "string"
         },
         "name": {
+          "description": "mako | markdown",
           "type": "string",
           "default": "Document"
         },
         "password": {
-          "description": "default null? (page vars)",
+          "$comment": "default null? (page vars) https://docassemble.org/docs/documents.html#password",
           "type": ["array", "object", "string"]
         },
         "pdf/a": {
@@ -915,35 +957,54 @@
           "default": false
         },
         "pdf template file": {
+          "$comment": "`valid format` only pdf, object uses `code:`. https://docassemble.org/docs/documents.html#docx%20template%20file, https://docassemble.org/docs/documents.html#template%20file%20code",
+          "type": ["array", "object", "string"]
+        },
+        "persistent": {
+          "$comment": "https://docassemble.org/docs/documents.html#permissions",
           "type": "string"
         },
-        "persistent": {"type": "string"},
-        "private": {"type": "string"},
+        "private": {
+          "$comment": "https://docassemble.org/docs/documents.html#permissions",
+          "type": "string"
+        },
         "raw": {
           "description": "needs `content file`",
           "type": "boolean",
           "default": false
         },
-        "raw field variables": {"type": "string"},
+        "raw field variables": {
+          "$comment": "https://docassemble.org/docs/documents.html#raw%20field%20variables",
+          "type": "string"
+        },
         "redact": {
+          "$comment": "https://docassemble.org/docs/documents.html#redact",
           "description": "python",
           "type": ["boolean", "string"],
           "default": true
         },
-        "rendering font": {"type": "string"},
-        "rtf template file": {"type": "string"},
-        "skip undefined": {"type": "string"},
+        "rendering font": {
+          "$comment": "https://docassemble.org/docs/documents.html#rendering%20font",
+          "description": "str or mako",
+          "type": "string"
+        },
+        "skip undefined": {
+          "$comment": "https://docassemble.org/docs/documents.html#template%20code",
+          "type": ["boolean", "string"]
+        },
         "tagged pdf": {
-          "description": "requires docx.",
+          "description": "requires docx. https://docassemble.org/docs/documents.html#pdfa",
           "type": ["boolean", "string"],
           "default": false
         },
-        "template file": {"type": "string"},
         "template password": {
           "description": "default null? (page vars)",
           "type": "string"
         },
-        "update references": {"type": "string"},
+        "update references": {
+          "$comment": "https://docassemble.org/docs/documents.html#update%20references",
+          "type": ["boolean", "string"]
+        },
         "usedefs": {"type": "string"},
         "valid formats": {
           "description": "https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5136-L5144, https://github.com/jhpyle/docassemble/blob/v1.4.81/docassemble_base/docassemble/base/parse.py#L5261-L5269",
@@ -958,7 +1019,7 @@
               "type": "array",
               "$comment": "need more limits. `pdf template file` requires `pdf` only format.",
               "items": {
-                "$comment": "tex is a valid format: https://www.lifewire.com/tex-file-4153927. 'Which valid formats are relevant depends on what system of document  assembly you are using. If the template is in Markdown format, Pandoc can convert Markdown to lots of different formats'. For docx template file the only options are docx and pdf. For pdf template file, the only option is pdf.",
+                "$comment": "'Which valid formats are relevant depends on what system of document  assembly you are using. If the template is in Markdown format, Pandoc can convert Markdown to lots of different formats'. For docx template file the only options are docx and pdf. For pdf template file, the only option is pdf.",
                 "description": "MIME",
                 "type": "string"
               },
@@ -975,6 +1036,28 @@
         },
         "variable name": {
           "description": "var",
+          "type": "string"
+        },
+
+
+        "additional yaml": {
+          "$comment": "also `attachment options`. https://docassemble.org/docs/documents.html#customization",
+          "type": "string"
+        },
+        "docx reference file": {
+          "$comment": "also `attachment options`. https://docassemble.org/docs/documents.html#customization",
+          "type": "string"
+        },
+        "initial yaml": {
+          "$comment": "also `attachment options`. https://docassemble.org/docs/documents.html#customization",
+          "type": "string"
+        },
+        "rtf template file": {
+          "$comment": "also `attachment options`. https://docassemble.org/docs/documents.html#customization",
+          "type": "string"
+        },
+        "template file": {
+          "$comment": "also `attachment options`. https://docassemble.org/docs/documents.html#customization",
           "type": "string"
         }
       }

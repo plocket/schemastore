@@ -1,0 +1,4 @@
+comment: "Fail with `pdf template file` has a `valid formats` value other than pdf"
+attachment:
+  - pdf template file: a_file.pdf
+    valid formats: md
