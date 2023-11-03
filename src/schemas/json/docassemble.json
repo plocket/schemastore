@@ -848,7 +848,7 @@
         "docx template file": {
           "properties": {
             "valid formats": {
-              "enum": ["pdf", "docx", ["pdf"], ["docx"], ["pdf", "docx"]]
+              "enum": ["pdf", "docx", ["pdf"], ["docx"], ["pdf", "docx"], ["docx", "pdf"]]
             }
           }
         }
@@ -1018,6 +1018,7 @@
             {
               "type": "array",
               "$comment": "need more limits. `pdf template file` requires `pdf` only format.",
+              "minItems": 1,
               "items": {
                 "$comment": "'Which valid formats are relevant depends on what system of document  assembly you are using. If the template is in Markdown format, Pandoc can convert Markdown to lots of different formats'. For docx template file the only options are docx and pdf. For pdf template file, the only option is pdf.",
                 "description": "MIME",

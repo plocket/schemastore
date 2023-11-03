@@ -1,4 +1,4 @@
-comment: "`docx template file` can have `valid formats` with docx and pdf"
+comment: "`docx template file` can have `valid formats` list with both docx and pdf"
 attachment:
   - valid formats:
       - docx

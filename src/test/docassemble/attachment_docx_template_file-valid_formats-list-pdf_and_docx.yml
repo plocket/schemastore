@@ -1,0 +1,9 @@
+comment: |
+  `docx template file` can have `valid formats` list with
+  both docx and pdf, but in a different order to make sure
+  our validation schema doesn't care about order
+attachment:
+  - valid formats:
+      - pdf
+      - docx
+    docx template file: a_file.docx
